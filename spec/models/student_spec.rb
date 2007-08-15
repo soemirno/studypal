@@ -13,6 +13,10 @@ describe Student do
     @student.password.should be_nil
   end
 
+  it "should have a password confirmation" do
+    @student.password_confirmation.should be_nil
+  end
+
   it "should have an email address" do
     @student.email.should be_nil
   end
