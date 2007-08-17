@@ -1,12 +1,18 @@
-<% form_for(@student) do |f| %>
-  <label for="student_login">Login:</label>
-  <%= f.text_field :login %>
-  <label for="student_email">Email:</label>  
-  <%= f.text_field :email %>  
-  <label for="student_password">Password:</label>  
-  <%= f.password_field :password %>  
-  <label for="student_password_confirmation">Confirm Password:</label>    
-  <%= f.password_field :password_confirmation %>  
+<% form_for :student, :url => students_path do |f| %>
+  <p>
+    <label for="student_login">Login:</label><br/>
+    <%= f.text_field :login %>
+  </p>
+  <p>
+    <label for="student_email">Email:</label><br/>  
+    <%= f.text_field :email %>  
+  </p>
+    <label for="student_password">Password:</label><br/>  
+    <%= f.password_field :password %>  
+  <p>  
+    <label for="student_password_confirmation">Confirm Password:</label><br/>
+    <%= f.password_field :password_confirmation %>  
+  </p>  
   <%= f.submit "Signup" %>
 <% end %>
 
