@@ -4,15 +4,13 @@
     <%= f.text_field :login %>
   </p>
   <p>
+    <label for="student_identity_url">OpenID:</label><br/>
+    <%= f.text_field :identity_url %>
+  </p>
+  <p>
     <label for="student_email">Email:</label><br/>  
     <%= f.text_field :email %>  
   </p>
-    <label for="student_password">Password:</label><br/>  
-    <%= f.password_field :password %>  
-  <p>  
-    <label for="student_password_confirmation">Confirm Password:</label><br/>
-    <%= f.password_field :password_confirmation %>  
-  </p>  
   <%= f.submit "Signup" %>
 <% end %>
 

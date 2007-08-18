@@ -6,8 +6,8 @@ ActiveRecord::Schema.define(:version => 1) do
 
   create_table "students", :force => true do |t|
     t.string   "login"
-    t.string   "password"
     t.string   "email"
+    t.string   "identity_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
