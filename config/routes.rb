@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :courses
+
   map.connect 'signup', :controller=>'students', :action => 'new'
   map.resources :students
   # The priority is based upon order of creation: first created -> highest priority.
