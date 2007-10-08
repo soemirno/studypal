@@ -1,0 +1,13 @@
+Index: vendor/plugins/rspec_on_rails/lib/spec/rails/dsl/behaviour/helper.rb
+===================================================================
+--- vendor/plugins/rspec_on_rails/lib/spec/rails/dsl/behaviour/helper.rb	(revision 2660)
++++ vendor/plugins/rspec_on_rails/lib/spec/rails/dsl/behaviour/helper.rb	(working copy)
+@@ -28,7 +28,7 @@
+           include ActionView::Helpers::FormOptionsHelper
+           include ActionView::Helpers::FormTagHelper
+           include ActionView::Helpers::JavaScriptHelper
+-          include ActionView::Helpers::JavaScriptMacrosHelper
++          include ActionView::Helpers::JavaScriptMacrosHelper rescue nil
+           include ActionView::Helpers::NumberHelper
+           include ActionView::Helpers::PaginationHelper rescue nil #removed after 1.2.3
+           include ActionView::Helpers::PrototypeHelper
