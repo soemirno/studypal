@@ -9,7 +9,7 @@ namespace :spec do
 end
 
 desc 'Continuous build target'
-task :cruise => ["spec:verify_rcov",:fill_artifacts] do
+task :cruise => ["spec:verify_rcov",:fill_artifacts,:sync_repositories] do
 end
 
 task :patch_rspec do
@@ -25,4 +25,9 @@ end
 
 task :copy_private do
   cp "#{RAILS_ROOT}/../database.yml", "#{RAILS_ROOT}/config" 
+end
+
+desc 'Synchronize the changes in your repositories with trac'
+task :sync_repositories => :environment do
+  system("/usr/bin/svnsync sync file:///home/pmanager/repositories/repl_studypal/")
 end
