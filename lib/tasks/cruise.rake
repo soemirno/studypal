@@ -29,5 +29,5 @@ end
 
 desc 'Synchronize the changes in your repositories with trac'
 task :sync_repositories => :environment do
-  system("/usr/bin/svnsync sync file:///home/pmanager/repositories/repl_studypal/")
+  system("/usr/bin/svnsync sync --username svnsync file:///home/pmanager/repositories/repl_studypal/")
 end
