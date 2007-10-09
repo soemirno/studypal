@@ -1,0 +1,1 @@
+$ patch -p0 < rspec_on_rails_with_edge.diff
