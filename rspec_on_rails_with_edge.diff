@@ -1,6 +1,6 @@
 Index: vendor/plugins/rspec_on_rails/lib/spec/rails/dsl/behaviour/helper.rb
 ===================================================================
---- vendor/plugins/rspec_on_rails/lib/spec/rails/dsl/behaviour/helper.rb	(revision 2660)
+--- vendor/plugins/rspec_on_rails/lib/spec/rails/dsl/behaviour/helper.rb	(revision 2715)
 +++ vendor/plugins/rspec_on_rails/lib/spec/rails/dsl/behaviour/helper.rb	(working copy)
 @@ -28,7 +28,7 @@
            include ActionView::Helpers::FormOptionsHelper
@@ -11,3 +11,12 @@ Index: vendor/plugins/rspec_on_rails/lib/spec/rails/dsl/behaviour/helper.rb
            include ActionView::Helpers::NumberHelper
            include ActionView::Helpers::PaginationHelper rescue nil #removed after 1.2.3
            include ActionView::Helpers::PrototypeHelper
+Index: vendor/plugins/rspec_on_rails/lib/spec/rails.rb
+===================================================================
+--- vendor/plugins/rspec_on_rails/lib/spec/rails.rb	(revision 2715)
++++ vendor/plugins/rspec_on_rails/lib/spec/rails.rb	(working copy)
+@@ -1,3 +1,4 @@
++require 'test/unit'
+ dir = File.dirname(__FILE__)
+ require 'application'
+ 
