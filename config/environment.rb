@@ -30,7 +30,7 @@ Rails::Initializer.run do |config|
   # If you change this key, all old sessions will become invalid!
   config.action_controller.session = {
     :session_key => 'studypal_session',
-    :secret      => 'studypal_secret'
+    :secret      => '848943hfhf7237h80893hhf08hnncx00r8xdshflsfjsa926800s6td23nnshh384afs05862'
   }
 
   # Use the database for sessions instead of the file system
