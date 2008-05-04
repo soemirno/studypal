@@ -1,7 +1,6 @@
 require File.dirname(__FILE__) + '/../../spec_helper'
 
 describe "/courses/new.html.erb" do
-  include CoursesHelper
 
   before do
     @course = mock_model(Course, :title => 'een titel', :description => 'een beschrijving')
