@@ -1,6 +1,6 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
-describe StudentController, "handling new student" do
+describe StudentsController, "handling new student" do
 
   # Student stub
   class Student; end
@@ -31,7 +31,7 @@ describe StudentController, "handling new student" do
   
 end
 
-describe StudentController, "handling signup" do
+describe StudentsController, "handling signup" do
 
   # Student stub
   class Student; end
