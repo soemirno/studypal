@@ -4,8 +4,8 @@ class StudentsController < ApplicationController
     @student = Student.new
   end
   
-  def signup
-    @student = Student.signup(params[:student])
+  def create
+    @student = Student.create(params[:student])
     if @student.valid?
       redirect_to :action => "show"
     else

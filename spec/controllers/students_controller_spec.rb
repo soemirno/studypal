@@ -40,15 +40,15 @@ describe StudentsController, "handling signup" do
     @params = {"key" => "value", "other_key" => "other value"}
     @valid_student = mock("Valid Student", :valid? => true)
     @invalid_student = mock("Invalid Student", :valid? => false)
-    Student.stub!(:signup).and_return(@valid_student)
+    Student.stub!(:create).and_return(@valid_student)
   end
   
   def signup
-    post :signup, :student => @params
+    post :create, :student => @params
   end
       
   it "should let new student signup" do
-    Student.should_receive(:signup).with(@params).and_return(@valid_student)
+    Student.should_receive(:create).with(@params).and_return(@valid_student)
     signup
   end
   
@@ -63,7 +63,7 @@ describe StudentsController, "handling signup" do
   end
   
   it "should re-render new if failed" do
-    Student.stub!(:signup).and_return(@invalid_student)
+    Student.stub!(:create).and_return(@invalid_student)
     signup
     response.should render_template('new')
   end
