@@ -1,0 +1,19 @@
+<div id="profile" class="standard_form">
+  <% form_for @student , :url => { :action => "signup" } do |f| %>
+    <h1>Sign up</h1>
+  
+    <label for="student_login">Username<br/></label> 
+    <%= f.text_field :login, :class => "text", :size => 30, :style => "width:25 em;", :value => "" %><br/>
+  
+    <label for="student_email">Email Adress<br/></label>    
+    <%= f.text_field :email, :class => "text", :size => 30, :style => "width:25 em;", :value => "" %><br/>
+  
+    <label for="student_password">Password<br/></label>    
+    <%= f.password_field :password, :class => "text", :size => 30, :style => "width:15 em;", :value => "" %><br/>
+  
+    <label for="student_password_confirmation">Confirm Password<br/></label>      
+    <%= f.password_field :password_confirmation, :class => "text", :size => 30, :style => "width:15 em;", :value => "" %><br/>
+  
+    <%= f.submit "Signup" %>
+  <% end %>
+</div>
