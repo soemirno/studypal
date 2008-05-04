@@ -1,5 +1,36 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
+describe StudentController, "handling new student" do
+
+  # Student stub
+  class Student; end
+  
+  before do
+    @student = mock("Student")
+    Student.stub!(:new).and_return(@student)
+  end
+
+  def do_get
+    get :new
+  end
+    
+  it "should create new student placeholder" do
+    Student.should_receive(:new).and_return(@student)
+    do_get
+  end
+  
+  it "should keep reference to new student placeholder" do
+    do_get
+    assigns[:student].should == @student
+  end
+  
+  it "should render template new" do
+    do_get
+    response.should render_template('new')      
+  end
+  
+end
+
 describe StudentController, "handling signup" do
 
   # Student stub
@@ -26,7 +57,7 @@ describe StudentController, "handling signup" do
     assigns[:student].should == @valid_student
   end
   
-  it "should redirect if succesfull" do
+  it "should redirect if succesful" do
     signup
     response.should redirect_to(:action => 'show')
   end
