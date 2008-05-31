@@ -2,9 +2,6 @@ require File.dirname(__FILE__) + '/../spec_helper'
 
 describe StudentsController, "handling new student" do
 
-  # Student stub
-  class Student; end
-  
   before do
     @student = mock("Student")
     Student.stub!(:new).and_return(@student)
@@ -32,9 +29,6 @@ describe StudentsController, "handling new student" do
 end
 
 describe StudentsController, "handling signup" do
-
-  # Student stub
-  class Student; end
 
   before(:each) do
     @params = {"key" => "value", "other_key" => "other value"}
