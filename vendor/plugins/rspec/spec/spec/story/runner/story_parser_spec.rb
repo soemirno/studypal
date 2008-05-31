@@ -244,15 +244,9 @@ module Spec
 					@parser.parse(["Story: s", "Scenario: s", "Given first", "Then: and there"])
 			  end
 			  
-			  it "should ignore lines beginning with '#'" do
-					@parser.parse(["Story: s", "Scenario: s", "Given first", "#this is ignored"])
+			  it "should ignore other" do
+					@parser.parse(["Story: s", "Scenario: s", "Given first", "this is ignored"])
 			  end
-
-			  it "should not ignore lines beginning with non-keywords" do
-          @story_mediator.should_receive(:add_to_last).with("\nthis is not ignored")
-					@parser.parse(["Story: s", "Scenario: s", "Given first", "this is not ignored"])
-			  end
-			  
 			end
 
 			describe StoryParser, "in When state" do
@@ -315,13 +309,8 @@ module Spec
 					@parser.parse(["Story: s", "Scenario: s", "Given: first", "When: else", "Then: and there"])
 			  end
 			  
-			  it "should ignore lines beginning with '#'" do
-					@parser.parse(["Story: s", "Scenario: s", "Given first", "When else", "#this is ignored"])
-			  end
-
-			  it "should not ignore lines beginning with non-keywords" do
-          @story_mediator.should_receive(:add_to_last).with("\nthis is not ignored")
-					@parser.parse(["Story: s", "Scenario: s", "Given: first", "When else", "this is not ignored"])
+			  it "should ignore other" do
+					@parser.parse(["Story: s", "Scenario: s", "Given first", "When else", "this is ignored"])
 			  end
 			end
 
@@ -386,14 +375,8 @@ module Spec
 					@parser.parse(["Story: s", "Scenario: s", "Given: first", "When: else", "Then: what", "And: ever"])
 			  end
 
-			  
-			  it "should ignore lines beginning with '#'" do
-					@parser.parse(["Story: s", "Scenario: s", "Given first", "When else", "Then what", "#this is ignored"])
-			  end
-
-			  it "should not ignore lines beginning with non-keywords" do
-          @story_mediator.should_receive(:add_to_last).with("\nthis is not ignored")
-					@parser.parse(["Story: s", "Scenario: s", "Given: first", "When else", "Then what", "this is not ignored"])
+			  it "should ignore other" do
+					@parser.parse(["Story: s", "Scenario: s", "Given first", "When else", "Then what", "this is ignored"])
 			  end
 			end
 		end

@@ -4,7 +4,6 @@ require 'spec/expectations'
 require 'spec/example'
 require 'spec/extensions'
 require 'spec/runner'
-require 'spec/adapters'
 
 if Object.const_defined?(:Test); \
   require 'spec/interop/test'; \
