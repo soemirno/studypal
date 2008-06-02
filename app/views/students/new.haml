@@ -1,0 +1,19 @@
+#profile
+
+  %h1 Sign up
+
+  - form_for @student do |f|
+    #student_login_label
+      %label{:for=>"student_login"} Username
+    = f.text_field :login
+    #student_email_label
+      %label{:for=>"student_email"} Email Address
+    = f.text_field :email
+    #student_password_label
+      %label{:for=>"student_password"} Password
+    = f.password_field :password, :value => ""
+    #student_password_confirmation_label
+      %label{:for=>"student_password_confirmation"} Confirm Password
+    = f.password_field :password_confirmation, :value => ""
+    #form_button
+      = f.submit "Signup"

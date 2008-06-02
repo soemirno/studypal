@@ -9,7 +9,7 @@ describe "/students/new.html.erb" do
   end
 
   it "should render form with student signup input fields" do
-    render "/students/new.html.erb"
+    render "/students/new.haml"
     response.should have_tag("form[action=?][method='post']", "/students") do
       with_tag("input#student_login[name=?]", "student[login]")
       with_tag("input#student_email[name=?]", "student[email]")
